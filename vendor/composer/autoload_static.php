@@ -9,6 +9,7 @@ class ComposerStaticInitc633f28041dc920fbe394dd424da1903
     public static $files = array (
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
         '667aeda72477189d0494fecd327c3641' => __DIR__ . '/..' . '/symfony/var-dumper/Resources/functions/dump.php',
+        'c7359326b6707d98bdc176bf9ddeaebf' => __DIR__ . '/..' . '/catfan/medoo/medoo.php',
     );
 
     public static $prefixLengthsPsr4 = array (
@@ -38,11 +39,22 @@ class ComposerStaticInitc633f28041dc920fbe394dd424da1903
         ),
     );
 
+    public static $prefixesPsr0 = array (
+        'T' => 
+        array (
+            'Twig_' => 
+            array (
+                0 => __DIR__ . '/..' . '/twig/twig/lib',
+            ),
+        ),
+    );
+
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInitc633f28041dc920fbe394dd424da1903::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInitc633f28041dc920fbe394dd424da1903::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInitc633f28041dc920fbe394dd424da1903::$prefixesPsr0;
 
         }, null, ClassLoader::class);
     }

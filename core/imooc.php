@@ -55,9 +55,17 @@
      $file = APP.'/views/'.$file;
      // p($file);exit();
      if(is_file($file)){
-     	extract($this->assign);
-     	include $file;
-     }
+     	// extract($this->assign);
+    \Twig_Autoloader::register();
+    $loader = new \Twig_Loader_Filesystem(APP.'/views');
+    $twig = new \Twig_Environment($loader, array(
+    'cache' => IMOOC.'/log/twig',
+    'debug'=> DEBUG
+   ));
+     $template = $twig->loadTemplate('index.html');
+     $template->display($this->assign?$this->assign:array());
+     	// include $file;
+     };
    }
  }
 ?>

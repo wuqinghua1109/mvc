@@ -31,7 +31,7 @@ if(DEBUG){
    ini_set('display_error','Off');
 }
 
-aaaaae();
+
 /*加载函数库*/
 include CORE.'/common/function.php';
 /*加载核心文件*/

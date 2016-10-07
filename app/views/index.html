@@ -1,2 +1,23 @@
-<h1><?php echo $title; ?></h1>
-<h3><?php echo $data; ?></h3>
+{% extends "show.html" %}
+{% block content %}
+
+<center>
+	<table>
+		<tr>
+			<td>ID</td>
+			<td>用户id</td>
+			<td>商品id</td>
+			<td>操作</td>
+		</tr>
+		{% for var in data %}
+		<tr>
+			<td>{{ var.s_id }}</td>
+			<td>{{ var.u_id }}</td>
+			<td>{{ var.sum }}</td>
+			<td><a href="/mvc/index/del/id/{{var.s_id }}">删除</a></td>
+		</tr>
+		{%endfor %}
+	</table>
+</center>
+
+{% endblock %}
